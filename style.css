@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --BGCOLOR: #4d7298ff;
+  --TXTCOLOR: #b3d89cff;
+  --FRSTCOLOR: #d0efb1ff;
+  --SCNDCOLOR: #9dc3c2ff;
+  --THRDCOLOR: #77a6b6ff;
+}
+body {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: var(--BGCOLOR);
+}
+
+#container {
+  /* height: 60vh;
+  width: 30rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--THRDCOLOR);
+  border-radius: 3px;
+  overflow-y: auto;
+  position: relative;
+  min-width: 30em;
+  min-height: 20em;
+  max-height: 40em;
+}
+
+.element {
+  border: 1px solid var(--FRSTCOLOR);
+  border-radius: 3px;
+  width: 25rem;
+  height: 2rem;
+  margin-top: 1em;
+  background-color: var(--BGCOLORS);
+  min-width: 10em;
+  min-height: 2em;
+}
+
+.adder {
+  border: 1px solid var(--TXTCOLOR);
+  position: absolute;
+  background-color: var(--FRSTCOLOR);
+}
