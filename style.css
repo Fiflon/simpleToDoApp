@@ -11,16 +11,72 @@
   --THRDCOLOR: #77a6b6ff;
 }
 body {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  background-color: var(--BGCOLOR);
+}
+
+#container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.middle {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#nameOfNewTask {
+  width: 100%;
+  background-color: var(--THRDCOLOR);
+  border: none;
+  border-bottom: solid var(--TXTCOLOR) 2px;
+  border-radius: 3px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#nameOfNewTask:focus {
+  background-color: var(--SCNDCOLOR);
+  outline: none;
+}
+#nameOfNewTask:hover {
+  background-color: var(--SCNDCOLOR);
+}
+#taskAdder {
+  background-color: var(--THRDCOLOR);
+  padding: 3px;
+  border: solid var(--TXTCOLOR) 2px;
+  color: var(--TXTCOLOR);
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+#taskAdder:hover {
+  background-color: var(--SCNDCOLOR);
 }
 
 #todoList {
   display: flex;
   flex-direction: column-reverse;
   list-style-type: none;
+}
+
+#todoList li {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  margin-bottom: 0.5rem;
+  overflow: auto;
+}
+
+#todoList li button {
+  margin-left: auto;
+  background-color: #b3d89cff;
+}
+
+#todoList li label {
+  margin-right: 3px;
 }

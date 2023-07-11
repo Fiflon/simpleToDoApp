@@ -16,6 +16,7 @@ function addNewTask() {
   todoTask.textContent = titleOfTask;
 
   let delButton = document.createElement("button");
+
   delButton.textContent = "Delete";
   delButton.addEventListener("click", () => {
     let li = delButton.parentNode;
@@ -26,21 +27,12 @@ function addNewTask() {
   li.appendChild(todoTask);
   li.appendChild(delButton);
   todoList.appendChild(li);
+  document.getElementById("nameOfNewTask").value = "";
 }
 
-/* btnAddTask.addEventListener("click", () => {
-  let titleOfTask = nameOfTaskPlaceholder.value.trim();
-  if (titleOfTask == "") {
-  } else {
-    let li = document.createElement("li");
-    let checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-
-    let todoTask = document.createElement("label");
-    todoTask.textContent = titleOfTask;
-
-    li.appendChild(checkbox);
-    li.appendChild(todoTask);
-    todoList.appendChild(li);
-  }
-}); */
+nameOfTaskPlaceholder.addEventListener("mouseover", (event) => {
+  btnAddTask.style.background = "#4d7298ff";
+});
+nameOfTaskPlaceholder.addEventListener("mouseleave", (event) => {
+  btnAddTask.style.background = "#77a6b6ff";
+});
