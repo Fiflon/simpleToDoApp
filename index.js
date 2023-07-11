@@ -2,7 +2,7 @@ let myTasks = [];
 const btnAddTask = document.getElementById("taskAdder");
 const nameOfTaskPlaceholder = document.getElementById("nameOfNewTask");
 const todoList = document.getElementById("todoList");
-
+const adderSpace = document.getElementById("adderSpace");
 function addNewTask() {
   let titleOfTask = nameOfTaskPlaceholder.value.trim();
   if (titleOfTask == "") {
@@ -30,9 +30,14 @@ function addNewTask() {
   document.getElementById("nameOfNewTask").value = "";
 }
 
-nameOfTaskPlaceholder.addEventListener("mouseover", (event) => {
+adderSpace.addEventListener("mouseover", (event) => {
   btnAddTask.style.background = "#4d7298ff";
+  nameOfTaskPlaceholder.style.background = "#4d7298ff";
 });
-nameOfTaskPlaceholder.addEventListener("mouseleave", (event) => {
+adderSpace.addEventListener("mouseleave", (event) => {
   btnAddTask.style.background = "#77a6b6ff";
+  nameOfTaskPlaceholder.style.background = "#77a6b6ff";
+});
+btnAddTask.addEventListener("focus", () => {
+  btnAddTask.style.background = "#d0efb1ff";
 });
