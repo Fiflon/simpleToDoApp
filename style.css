@@ -19,7 +19,8 @@ body {
   background-color: var(--BGCOLOR);
 }
 
-ul {
+#todoList {
   display: flex;
   flex-direction: column-reverse;
+  list-style-type: none;
 }
