@@ -1,3 +1,4 @@
+import { createDeleteButton } from "./components/delButton.js";
 let myTasks = [];
 const btnAddTask = document.getElementById("taskAdder");
 const nameOfTaskPlaceholder = document.getElementById("nameOfNewTask");
@@ -15,13 +16,7 @@ function addNewTask() {
   let todoTask = document.createElement("label");
   todoTask.textContent = titleOfTask;
 
-  let delButton = document.createElement("button");
-
-  delButton.textContent = "Delete";
-  delButton.addEventListener("click", () => {
-    let li = delButton.parentNode;
-    todoList.removeChild(li);
-  });
+  let delButton = createDeleteButton();
 
   li.appendChild(checkbox);
   li.appendChild(todoTask);
