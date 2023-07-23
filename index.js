@@ -4,6 +4,9 @@ const btnAddTask = document.getElementById("taskAdder");
 const nameOfTaskPlaceholder = document.getElementById("nameOfNewTask");
 const todoList = document.getElementById("todoList");
 const adderSpace = document.getElementById("adderSpace");
+btnAddTask.addEventListener("click", () => {
+  addNewTask();
+});
 function addNewTask() {
   let titleOfTask = nameOfTaskPlaceholder.value.trim();
   if (titleOfTask == "") {
