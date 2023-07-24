@@ -1,4 +1,6 @@
 import { createDeleteButton } from "./components/delButton.js";
+import { createCheckbox } from "./components/taskCheckbox.js";
+import { createLabel } from "./components/taskLabel.js";
 let myTasks = [];
 const btnAddTask = document.getElementById("taskAdder");
 const nameOfTaskPlaceholder = document.getElementById("nameOfNewTask");
@@ -13,19 +15,15 @@ function addNewTask() {
     return;
   }
   let li = document.createElement("li");
-  let checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
+  let newCheckbox = createCheckbox();
+  let newTaskLabel = createLabel(titleOfTask);
+  let newDeleteButton = createDeleteButton();
 
-  let todoTask = document.createElement("label");
-  todoTask.textContent = titleOfTask;
-
-  let delButton = createDeleteButton();
-
-  li.appendChild(checkbox);
-  li.appendChild(todoTask);
-  li.appendChild(delButton);
+  li.appendChild(newCheckbox);
+  li.appendChild(newTaskLabel);
+  li.appendChild(newDeleteButton);
   todoList.appendChild(li);
-  document.getElementById("nameOfNewTask").value = "";
+  nameOfTaskPlaceholder.value = "";
 }
 
 adderSpace.addEventListener("mouseover", (event) => {
