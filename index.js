@@ -1,15 +1,17 @@
-import { createDeleteButton } from "./components/delButton.js";
-import { createCheckbox } from "./components/taskCheckbox.js";
-import { createLabel } from "./components/taskLabel.js";
+import {
+  addNewTaskToTheList,
+  createNewTask,
+} from "./components/listOfTasks.js";
 let myTasks = [];
 const btnAddTask = document.getElementById("taskAdder");
 const nameOfTaskPlaceholder = document.getElementById("nameOfNewTask");
 const todoList = document.getElementById("todoList");
 const adderSpace = document.getElementById("adderSpace");
 btnAddTask.addEventListener("click", () => {
-  addNewTask();
+  addNewTaskToTheList(createNewTask());
+  nameOfTaskPlaceholder.innerText = "";
 });
-function addNewTask() {
+/* function addNewTask() {
   let titleOfTask = nameOfTaskPlaceholder.value.trim();
   if (titleOfTask == "") {
     return;
@@ -24,7 +26,7 @@ function addNewTask() {
   li.appendChild(newDeleteButton);
   todoList.appendChild(li);
   nameOfTaskPlaceholder.value = "";
-}
+} */
 
 adderSpace.addEventListener("mouseover", (event) => {
   btnAddTask.style.background = "#4d7298ff";
