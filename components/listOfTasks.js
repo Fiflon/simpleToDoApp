@@ -8,7 +8,7 @@ const todoList = document.getElementById("todoList");
 
 export function createNewTask() {
   let titleOfNewtask = nameOfTaskPlaceholder.value.trim();
-  // w
+  // moze zrobic cale to sprawdzanie w innej funkcji?
   if (!checkIfStringNotEmpty(titleOfNewtask)) {
     return;
   }
