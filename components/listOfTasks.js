@@ -1,15 +1,15 @@
-import { createCheckbox } from "./taskCheckbox";
-import { createDeleteButton } from "./taskDelButton";
-import { createLabel } from "./taskLabel";
+import { createCheckbox } from "./taskCheckbox.js";
+import { createDeleteButton } from "./taskDelButton.js";
+import { createLabel } from "./taskLabel.js";
+import { checkIfStringNotEmpty } from "./utils.js";
 
 const nameOfTaskPlaceholder = document.getElementById("nameOfNewTask");
 const todoList = document.getElementById("todoList");
 
-export function checkIfTitleOfNewTaskNotEmpty() {}
-
 export function createNewTask() {
-  titleOfNewtask = nameOfTaskPlaceholder.innerText.trim();
-  if (titleOfNewtask === "") {
+  let titleOfNewtask = nameOfTaskPlaceholder.value.trim();
+  // w
+  if (!checkIfStringNotEmpty(titleOfNewtask)) {
     return;
   }
   let newListElement = document.createElement("li");
